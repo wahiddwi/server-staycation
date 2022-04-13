@@ -4,7 +4,8 @@ const mongoose = require("mongoose");
 //defined category schema
 const imageSchema = new mongoose.Schema({
     imageUrl: {
-        type: String
+        type: String,
+        required: true
     }
 });
 

@@ -4,7 +4,8 @@ const mongoose = require("mongoose");
 //defined category schema
 const categorySchema = new mongoose.Schema({
     name: {
-        type: String
+        type: String,
+        required: true
     }
 });
 
