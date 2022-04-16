@@ -4,6 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//import mongoose
+const mongoose = require('mongoose');
+//connection mongoose
+mongoose.connect('mongodb://localhost:27017/myapp');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 //calling router admin
