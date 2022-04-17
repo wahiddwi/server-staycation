@@ -5,6 +5,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 //declare methodOverride
 const methodOverride = require('method-override');
+//import express-session
+const session = require('express-session');
+//import connect-flash
+const flash = require('connect-flash');
 
 //import mongoose
 const mongoose = require('mongoose');
@@ -23,6 +27,16 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 //use methodOverride
 app.use(methodOverride('_method'));
+// use express-session
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 }
+}));
+//use connect-flash
+app.use(flash());
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
