@@ -1,6 +1,8 @@
 //import mongoose
 const mongoose = require("mongoose");
 
+const { ObjectId } = mongoose.Schema;
+
 //defined category schema
 const activitySchema = new mongoose.Schema({
     name: {
@@ -17,6 +19,10 @@ const activitySchema = new mongoose.Schema({
     },
     isPopular: {
         type: Boolean
+    },
+    itemId: {
+        type: ObjectId,
+        ref: Item
     }
 });
 

@@ -1,6 +1,8 @@
 //import mongoose
 const mongoose = require("mongoose");
 
+const { ObjectId } = mongoose.Schema;
+
 //defined category schema
 const featureSchema = new mongoose.Schema({
     name: {
@@ -14,6 +16,10 @@ const featureSchema = new mongoose.Schema({
     imageUrl: {
         type: String,
         required: true
+    },
+    itemId: {
+        type: ObjectId,
+        ref: Item
     }
 });
 
